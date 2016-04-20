@@ -1,0 +1,21 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+   app.user_manager:
+       class: AppBundle\Manager\UserManager
+       arguments: ["@doctrine.orm.entity_manager"]
+   app.repository_manager:
+       class: AppBundle\Manager\RepositoryManager
+       arguments: ["@doctrine.orm.entity_manager"]
+   app.payload_manager:
+       class: AppBundle\Manager\PayloadManager
+       arguments: ["@doctrine.orm.entity_manager"]
+   app.commit_manager:
+       class: AppBundle\Manager\CommitManager
+       arguments: ["@doctrine.orm.entity_manager" , "@app.file_manager"]
+   app.file_manager:
+       class: AppBundle\Manager\FileManager
+       arguments: ["@doctrine.orm.entity_manager"]
