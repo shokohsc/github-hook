@@ -2,9 +2,6 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\User;
-use AppBundle\Entity\Payload;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
