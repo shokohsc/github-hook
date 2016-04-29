@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class HookControllerTest extends WebTestCase
 {
-    public function testIndex()
+    public function testHook()
     {
         $client = static::createClient();
 

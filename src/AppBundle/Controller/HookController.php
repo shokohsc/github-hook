@@ -15,7 +15,7 @@ class HookController extends Controller
      * @Route("/hook", name="hook")
      * @Method({ "POST" })
      */
-    public function indexAction( Request $request )
+    public function hookAction( Request $request )
     {
         if (0 === strpos($request->headers->get('Content-Type'), 'application/json')) {
             $em   = $this->getDoctrine()->getManager();
