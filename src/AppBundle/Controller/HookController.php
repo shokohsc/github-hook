@@ -12,6 +12,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class HookController extends Controller
 {
     /**
+     * @Route("/test", name="test")
+     * @Method({ "GET" })
+     */
+    public function testAction( Request $request )
+    {
+        return new Response('Thx');
+    }
+
+    /**
      * @Route("/hook", name="hook")
      * @Method({ "POST" })
      */
