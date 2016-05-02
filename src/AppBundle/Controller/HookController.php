@@ -3,7 +3,7 @@
 namespace AppBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -31,10 +31,12 @@ class HookController extends Controller
             $repository = $repositoryManager->getRepositoryFromPayload($data->repository);
 
             $commitManager->saveCommitsFromPayload( $data->commits , $user , $repository , $payload  );
+
+            return new JsonResponse(null, 201);
         }
 
 
-        return new Response('Thx');
+        return new JsonResponse(null, 204);
     }
 
 }

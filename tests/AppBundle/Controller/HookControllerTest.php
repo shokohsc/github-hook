@@ -12,6 +12,6 @@ class HookControllerTest extends WebTestCase
 
         $crawler = $client->request('POST', '/hook', array());
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(204, $client->getResponse()->getStatusCode());
     }
 }
